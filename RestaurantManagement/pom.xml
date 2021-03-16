@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>PT2020.Assignment4</groupId>
+  <artifactId>RestaurantManagement</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>RestaurantManagement</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.2.0</version>
+				
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<tags>
+						<tag>
+							<name>pre</name>
+							<placement>cm</placement>
+							<head>Precondition:</head>
+						</tag>
+						
+						<tag>
+							<name>post</name>
+							<placement>cm</placement>
+							<head>Postcondition:</head>
+						</tag>
+
+						<tag>
+							<name>nochange</name>
+							<placement>cm</placement>
+							<head>No change:</head>
+						</tag>
+
+						<tag>
+							<name>result</name>
+							<placement>cm</placement>
+							<head>Result:</head>
+						</tag>
+
+						<tag>
+							<name>forall</name>
+							<placement>cm</placement>
+							<head>ForAll:</head>
+						</tag>
+
+						<tag>
+							<name>exists</name>
+							<placement>cm</placement>
+							<head>Exists:</head>
+						</tag>
+
+						<tag>
+							<name>invariat</name>
+							<placement>t</placement>
+							<head>Invariant:</head>
+						</tag>
+
+					</tags>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>start.MainClass</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
